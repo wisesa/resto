@@ -1,0 +1,240 @@
+body {
+    color: black;
+    font-family: calibri !important;
+}
+
+.navbar {
+    background-color: #e33f35 !important;
+}
+
+.login-card{
+    background-color: #e33f35 !important;
+    color:white;
+    border-radius: 4pt;
+}
+
+.logo{
+    width:60px;
+}
+
+.img-logo{
+    content:url("./logo.png");
+}
+
+.btn,
+.btn-login {
+    background-color: #a4201e;
+    color: white !important;
+}
+
+.btn-red {
+    background-color: #e33f35;
+    color: white !important;
+    width: 150px;
+}
+
+.btn-menu {
+    border-radius: 3pt;
+    width: 15%;
+    background-color: rgba(52, 58, 64);
+}
+
+.center {
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    color: #e33f35;
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 1px;
+    background: #ddd;
+    bottom: 1px;
+    left: calc(50% - 60px);
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #e33f35;
+    bottom: 0;
+    left: calc(50% - 20px);
+}
+
+.width-100-percent {
+    width: 100% !important;
+}
+
+.width-300px {
+    width: 300px;
+}
+
+.white {
+    background-color: transparent !important;
+    color: white !important;
+}
+
+p {
+    margin: 10px 0 !important;
+}
+
+.login-container {
+    width: 400px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.fa-small {
+    font-size: 16px !important;
+}
+
+.btn-float {
+    float: left;
+    margin-right: 10px;
+}
+
+.img-small {
+    width: 180px;
+}
+
+.img-profile {
+    width: 20%;
+    border-radius: 50%;
+    box-shadow: 10px 10px 50px 5px;
+}
+
+.md-center-lg-left {
+    text-align: left;
+}
+
+input,
+select {
+    width: 180px;
+}
+
+.img-menu {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.img-icon {
+    width: 50px;
+}
+
+.img-hamburger {
+    width: 30px;
+}
+
+
+/*CUSTOM MEDIA QUERY*/
+
+@media (max-width: 1024px) {
+    .basket {
+        width: 15%;
+    }
+    .btn-menu {
+        border-radius: 3pt;
+        width: 15%;
+        background-color: rgba(52, 58, 64);
+    }
+    #cart-list {
+        width: auto;
+    }
+    h3 {
+        font-size: 1.75rem;
+    }
+    h4 {
+        font-size: 1.5rem;
+    }
+    .login {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .basket {
+        width: auto;
+    }
+    .btn-menu {
+        border-radius: 3pt;
+        width: 25%;
+        background-color: rgba(52, 58, 64);
+    }
+    #cart-list {
+        width: auto;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    h4 {
+        font-size: 1.25rem;
+    }
+    .img-menu {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+    }
+    .md-center-lg-left {
+        text-align: center;
+    }
+    .login {
+        width: 60%;
+    }
+}
+
+@media (max-width: 575px) {
+    .basket {
+        width: auto;
+    }
+    .btn-menu {
+        border-radius: 3pt;
+        width: 45%;
+        background-color: rgba(52, 58, 64);
+    }
+    #cart-list {
+        width: auto;
+    }
+    h3 {
+        font-size: 1.25rem;
+    }
+    h4 {
+        font-size: 1rem;
+    }
+    .md-center-lg-left {
+        text-align: center;
+    }
+    .login {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1440px !important;
+    }
+    .login {
+        width: 30%;
+    }
+    li{
+        font-size:1.2rem;
+    }
+}
