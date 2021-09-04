@@ -16,6 +16,7 @@ const Dashboard = ({
 }) => {
     useEffect(() => {
         getCurrentProfile();
+        console.log("sdfsf");
     }, [getCurrentProfile]);
 
     return loading && profile === null ? <Spinner /> : <Fragment>

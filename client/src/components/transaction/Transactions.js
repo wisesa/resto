@@ -47,7 +47,7 @@ const Transactions = (
         useEffect(()=>{
             getTransactions();
             setCurrentPage(1);
-            setTodosPerPage(3);
+            setTodosPerPage(10);
             setTodos(transactions);
         }, [loading, getTransactions]);
 
@@ -63,32 +63,34 @@ const Transactions = (
             <Spinner />
         ) : (
             <Fragment>
-                <div className="parent-menu trans">
-                    <div className="transactions">
-                        <div className="sub-trans top-trans bg-white center">
+                <div className="d-flex justify-content-around mt-5">
+                    <div className="transactions mt-5">
+                        <div className="sub-trans top-trans center mt-3">
                             <div>
-                                <h3>No</h3>
+                                <h4 class="white">No</h4>
                             </div>
                             <div>
-                                <h3>Transaction Number</h3>
+                                <h4 class="white">Transaction Number</h4>
                             </div>
                             <div>
-                                <h3>Total Price</h3>
+                                <h4 class="white">Total Price</h4>
                             </div>
                             <div>
-                                <h3>Date Transaction</h3>
+                                <h4 class="white">Date Transaction</h4>
                             </div>
                         </div>
                         {renderTodos}
                     </div>
                 </div>
+                <div className="d-flex justify-content-around">
                 <Pagination
                 activePage={currentPage}
                 itemsCountPerPage={todosPerPage}
                 totalItemsCount={todos.length}
-                pageRangeDisplayed={3}
+                pageRangeDisplayed={5}
                 onChange={handlePageChange}
                 />
+                </div>
             </Fragment>
         );
 };

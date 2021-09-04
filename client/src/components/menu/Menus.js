@@ -42,29 +42,45 @@ const Menus = (
         <Spinner />
     ) : (
         <Fragment>
-            <div class="btn-add">
-                <Link to='/addmenu'>
-                    <div
-                    class="btn btn-danger">
-                        {<i class="fas fa-plus"></i>}
+            <div className="row d-flex flex-column-xl justify-content-center mt-5">
+                <div className="appetizers d-flex flex-column align-items-center center m-2">
+                    <div className="d-flex justify-content-between mt-5">
+                        <h2 className="dish-type mr-3">Appetizer</h2>
+                        <Link to='/addmenu'>
+                            <div
+                            class="btn btn-danger">
+                                {<i class="fas fa-plus"></i>}
+                            </div>
+                        </Link>
                     </div>
-                </Link>
-            </div>
-            <div className="parent-menu">
-                <div className="appetizers">
-                    <h2 className="dish-type">Appetizer</h2>
                     {appetizers.map(appetizer => (
                         <Appetizer key={appetizer._id} appetizer={appetizer} />
                     ))}
                 </div>
-                <div className="maincourses">
-                    <h2 className="dish-type">Main Course</h2>
+                <div className="maincourses d-flex flex-column align-items-center center m-2">
+                    <div className="d-flex justify-content-between mt-5">
+                        <h2 className="dish-type mr-3">Main Course</h2>
+                        <Link to='/addmenu'>
+                            <div
+                            class="btn btn-danger">
+                                {<i class="fas fa-plus"></i>}
+                            </div>
+                        </Link>
+                    </div>
                     {maincourses.map(maincourse => (
                         <Maincourse key={maincourse._id} maincourse={maincourse} />
                     ))}
                 </div>
-                <div className="desserts">
-                    <h2 className="dish-type">Dessert</h2>
+                <div className="desserts d-flex flex-column align-items-center center m-2">
+                    <div className="d-flex justify-content-between mt-5">
+                        <h2 className="dish-type mr-3">Dessert</h2>
+                        <Link to='/addmenu'>
+                            <div
+                            class="btn btn-danger">
+                                {<i class="fas fa-plus"></i>}
+                            </div>
+                        </Link>
+                    </div>
                     {desserts.map(dessert => (
                         <Dessert key={dessert._id} dessert={dessert} />
                     ))}

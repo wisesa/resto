@@ -12,26 +12,15 @@ const TransactionItem = ({
   return(
     <div className="sub-trans bg-white">
       <div className="center">
-          <h2><span>{no}</span></h2>
+          <h3><span>{no}</span></h3>
       </div>
-      <div>
-        <p><strong>{_id}</strong></p>
-        <br/>
-        {menu.map(item => (
-          <div className="sub-item">
-              <div>{item.name}</div>
-              <div>
-                {new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(item.price)}
-              </div>
-              <div>{item.amount}</div>
-            </div>
-          ))}
-
+      <div className="m-2">
+        {_id}
       </div>
-      <div className="center">
-        <h2>{new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(total)}</h2>
+      <div className="m-2 right">
+        {new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(total)}
       </div>
-      <div className="center">
+      <div className="m-2 center">
           <Moment format='DD-MM-YYYY HH:mm:ss'>{date}</Moment>
       </div>
       

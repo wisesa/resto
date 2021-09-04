@@ -7,7 +7,9 @@ const multer = require('multer');
 const upload = multer({ dest: 'public/menu/' });
 const fileUpload = require('express-fileupload');
 
-// Upload Endpoint
+// @route    POST api/menu
+// @desc     Add menu
+// @access   Private
 router.post('/', (req, res) => {
     console.log(req.body);
 
@@ -16,7 +18,6 @@ router.post('/', (req, res) => {
   }
 
   const file = req.files.file;
-
   file.mv(`${__dirname}../../../public/menu/${file.name}`, err => {
     if (err) {
       console.error(err);
@@ -37,7 +38,7 @@ router.post('/', (req, res) => {
 
 });
 
-// @route    POST api/menu
+// @route    UPDATE api/menu
 // @desc     Update menu
 // @access   Private
 router.put('/:id', 
@@ -52,15 +53,6 @@ router.put('/:id',
             price,
             type
         } = req.body;
-
-        // const menuFields = {};
-        // if (name) menuFields.name = name;
-        // if (price) menuFields.price = price;
-        // if (type) menuFields.type = type;
-        // console.log(req.params.id);
-        
-        // let menu = await Menu.findOneAndUpdate({ _id: req.params.id }, { $set: menuFields }, { new: true });
-        // return res.json(menu);
 
         const file = req.files.file;
         
@@ -85,52 +77,9 @@ router.put('/:id',
     }
 );
 
-// @desc    Show add form
-// @route   Get add
-router.post('/addmenu', async(req, res) => {
-    try {
-        console.log(req.body);
-        // console.log("dfssdf");
-        console.log(req.files);
-        // console.log(req.files[0].filename);
-
-    } catch (err) {
-        console.error(err)
-            //res.render('error/500')
-    }
-})
-
-// @desc    Show add form
-// @route   Get add
-router.get('/add', async(req, res) => {
-    try {
-        res.render('menu/add', { layout: false });
-
-    } catch (err) {
-        console.error(err)
-            //res.render('error/500')
-    }
-})
-
-// @desc    Process add form
-// @route   Render /menu
-router.get('/', async(req, res) => {
-    try {
-        const menu = await Menu.find({type: {'$ne':'' }}).lean().sort({ type: 1, name: 1 });
-        //console.log(menu);
-
-        res.render('menu/index', {
-            menu,
-            layout: false
-        });
-    } catch (err) {
-        console.error(err)
-            //res.render('error/500')
-    }
-})
-
-// @desc    Process add form
-// @route   Render /menu
+// @route    GET api/load/id
+// @desc     Load menu specific menu with id parameter
+// @access   Private
 router.get('/load/:id', async(req, res) => {
     try {
         const menu = await Menu.findOne({_id:req.params.id});
@@ -143,8 +92,9 @@ router.get('/load/:id', async(req, res) => {
     }
 })
 
-// @desc    Process add form
-// @route   POST /stories
+// @route    GET api/menu/list
+// @desc     Load all menu order by type asc and name asc
+// @access   Public
 router.get('/list', async(req, res) => {
     try {
         const menu = await Menu.find().sort({ type: 1, name: 1 });
@@ -157,8 +107,9 @@ router.get('/list', async(req, res) => {
     }
 })
 
-// @desc    Process add form
-// @route   POST /stories
+// @route    GET api/menu/list/type
+// @desc     Load menus that has certain types (1 is appetizer, 2 is main course, 3 is dessert)
+// @access   Private
 router.get('/list/:type', async(req, res) => {
     try {
         const menu = await Menu.find({type:req.params.type}).sort({ type: 1, name: 1 });
@@ -171,7 +122,7 @@ router.get('/list/:type', async(req, res) => {
     }
 })
 
-// @route    DELETE api/posts/:id
+// @route    DELETE api/menu/:id
 // @desc     Delete Menu
 // @access   Private
 router.delete('/:id', async(req, res) => {

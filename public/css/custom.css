@@ -365,6 +365,14 @@ h1 {
     margin-left: 8px;
 }
 
+.md{
+    display:block;
+}
+
+.sm{
+    display: none;
+}
+
 @media (max-width: 991px) {
     h1 {
         font-size: 40px !important;
@@ -389,6 +397,18 @@ h1 {
 }
 
 @media (max-width: 768px) {
+    .md{
+        display:none;
+    }
+    .sm{
+        display: block;
+    }
+    .left-sm{
+        text-align: left;
+    }
+    .center-sm{
+        text-align: center;
+    }
     h1 {
         font-size: 34px !important;
     }
@@ -410,6 +430,18 @@ h1 {
 }
 
 @media (max-width: 575px) {
+    .md{
+        display:none;
+    }
+    .sm{
+        display: block;
+    }
+    .left-sm{
+        text-align: left;
+    }
+    .center-sm{
+        text-align: center;
+    }
     h1 {
         font-size: 28px !important;
     }
@@ -597,8 +629,13 @@ h1 {
     color: #fff;
 }
 
+.bg-shrimp{
+    background:url(/img/shrimp.png); width:349px; height:219px; position:absolute; left:150; opacity:0.5;
+    z-index:-1;
+}
+
 #footer .copyright {
-    float: left;
+    /* float: left; */
 }
 
 #footer .credits {
@@ -608,6 +645,33 @@ h1 {
 
 #footer .credits a {
     transition: 0.3s;
+}
+
+
+table {
+    width: 100%;
+}
+
+.pad-2 {
+    padding: 2px;
+}
+
+* {
+    font-size: 10pt !important;
+}
+
+.pad-5-10 {
+    padding: 5px 10px;
+}
+
+.right{
+    text-align: right !important;
+}
+
+@media print {
+    .hidden-print {
+        display: none !important;
+    }
 }
 
 @media (max-width: 768px) {
@@ -786,7 +850,6 @@ span{
     #hero {
         width: 100%;
         height: 100vh;
-        background: #e33f35;
     }
     .img-hero {
         width: 300px;

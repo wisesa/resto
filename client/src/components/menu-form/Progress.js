@@ -5,7 +5,7 @@ const Progress = ({ percentage }) => {
   return (
     <div className='progress'>
       <div
-        className='progress-bar progress-bar-striped bg-success'
+        className='progress-bar progress-bar-striped'
         role='progressbar'
         style={{ width: `${percentage}%` }}
       >

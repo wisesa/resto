@@ -21,6 +21,12 @@ const TransactionSchema = new mongoose.Schema({
     total: {
         type: Number,
     },
+    lat: {
+        type: Number,
+    },
+    long: {
+        type: Number,
+    },
     date: {
         type: Date,
         default: Date.now

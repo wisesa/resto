@@ -22,22 +22,15 @@ const Login=({login,isAuthenticated})=>{
 
     //Redirect if logged in
     if(isAuthenticated){
-        return <Redirect to="/dashboard" />;
+        return <Redirect to="/menus" />;
     }
 
     return <Fragment>
-            <div>
-                    <h1 className="x-large text-primary">Archipelago's</h1>
-                    <p className="lead">
+            <div className="d-flex flex-column align-items-center">
+                    <h1 className="header-login">Archipelago's</h1>
+                    <p className="lead mb-5">
                         We are handling the best of Indonesian Cuisine
                     </p>
-                    {/* <div className="buttons">
-                        <Link to="/register" className="btn btn-primary">Sign Up</Link>
-                        <Link to="/login" className="btn btn-light">Login</Link>
-                    </div> */}
-
-                    {/* <h1 className="large text-primary">Sign In</h1>
-                    <p className="lead"><i className="fas fa-user"></i> Sign Into Your Account</p> */}
                     <form 
                     className="form" 
                     action="create-profile.html"
@@ -63,7 +56,7 @@ const Login=({login,isAuthenticated})=>{
                         />
                         </div>
                         <div className="right">
-                            <input type="submit" className="btn btn-primary" value="Login" />
+                            <input type="submit" className="btn btn-primary" value="LOGIN" />
                         </div>
                     </form>
             </div>

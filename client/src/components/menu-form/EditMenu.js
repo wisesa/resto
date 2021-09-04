@@ -98,14 +98,15 @@ const EditMenu = ({
     <Fragment>
       {menu === null || loading ? <Spinner /> : <Fragment>
 
+        <div className="d-flex justify-content-center mt-5">
         <form onSubmit={onSubmit}>
-          <table>
+          <table className="mt-5" cellPadding="10">
             <thead>
-            <tr>
-              <td className="center" colSpan="3">
-                <h2>EDIT MENU</h2>
-              </td>
-            </tr>
+              <tr>
+                <td className="center" colSpan="3">
+                  <h2>EDIT MENU</h2>
+                </td>
+              </tr>
             </thead>
             <tbody>
             <tr>
@@ -153,23 +154,24 @@ const EditMenu = ({
               <td></td>
               <td></td>
               <td>
-                <input
-                  type='submit'
-                  value='Upload'
-                  className='btn btn-primary btn-block mt-4'
-                />
-                <Progress percentage={uploadPercentage} />
+                {/* <Progress percentage={uploadPercentage} />
                 {uploadedFile ? (
                     <div>
                       <h3 className='text-center'>{uploadedFile.fileName}</h3>
                       <img style={{ width: '100%' }} src={uploadedFile.filePath} alt='' />
                     </div>
-                ) : null}
+                ) : null} */}
+                <input
+                  type='submit'
+                  value='Upload'
+                  className='btn btn-primary btn-block mt-4'
+                />
               </td>
             </tr>
             </tbody>
             </table>
         </form>
+      </div>
       </Fragment>}
     </Fragment>
   );

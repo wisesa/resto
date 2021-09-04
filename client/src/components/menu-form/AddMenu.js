@@ -68,73 +68,73 @@ const AddMenu = () => {
 
   return (
     <Fragment>
-      <form onSubmit={onSubmit}>
-        <table>
-          <tr>
-            <td class="center" colSpan="3">
-              <h2>ADD MENU</h2>
-            </td>
-          </tr>
-          <tr>
-            <td class="center" colSpan="3"></td>
-          </tr>
-          <tr>
-            <td>Name</td>
-            <td>:</td>
-            <td><input required value={name} type="text" name="name" onChange={e => onTextChange(e)} /></td>
-          </tr>
-          <tr>
-            <td>Price</td>
-            <td>:</td>
-            <td><input required value={price} type="text" name="price" onChange={e => onTextChange(e)} /></td>
-          </tr>
-          <tr>
-            <td>Type</td>
-            <td>:</td>
-            <td>
-              <select name="type" value={type} onChange={e => onTextChange(e)}>
-                <option value="0">* Select Dish Type</option>
-                <option value="1" selected>Appetizer</option>
-                <option value="2">Main Course</option>
-                <option value="3">Dessert</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td>Image</td>
-            <td>:</td>
-            <td>
-              <input
-                type='file'
-                className='custom-file-input'
-                id='customFile'
-                required
-                onChange={onChange}
-              />
-            </td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td>
-              <input
-                type='submit'
-                value='Upload'
-                className='btn btn-primary btn-block mt-4'
-              />
-              <Progress percentage={uploadPercentage} />
-              {uploadedFile ? (
-                  <div>
-                    <h3 className='text-center'>{uploadedFile.fileName}</h3>
-                    <img style={{ width: '100%' }} src={uploadedFile.filePath} alt='' />
-                  </div>
-              ) : null}
-            </td>
-          </tr>
-          </table>
-
-
-      </form>
+      <div className="d-flex justify-content-center mt-5">
+        <form onSubmit={onSubmit}>
+          <table className="mt-5" cellPadding="10">
+            <tr>
+              <td class="center" colSpan="3">
+                <h2>ADD MENU</h2>
+              </td>
+            </tr>
+            <tr>
+              <td class="center" colSpan="4"></td>
+            </tr>
+            <tr>
+              <td>Name</td>
+              <td>:</td>
+              <td><input required value={name} type="text" name="name" onChange={e => onTextChange(e)} /></td>
+            </tr>
+            <tr>
+              <td>Price</td>
+              <td>:</td>
+              <td><input required value={price} type="text" name="price" onChange={e => onTextChange(e)} /></td>
+            </tr>
+            <tr>
+              <td>Type</td>
+              <td>:</td>
+              <td>
+                <select name="type" value={type} onChange={e => onTextChange(e)}>
+                  <option value="0">* Select Dish Type</option>
+                  <option value="1" selected>Appetizer</option>
+                  <option value="2">Main Course</option>
+                  <option value="3">Dessert</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>Image</td>
+              <td>:</td>
+              <td>
+                <input
+                  type='file'
+                  className='custom-file-input'
+                  id='customFile'
+                  required
+                  onChange={onChange}
+                />
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>
+                {/* <Progress percentage={uploadPercentage} />
+                {uploadedFile ? (
+                    <div>
+                      <h3 className='text-center'>{uploadedFile.fileName}</h3>
+                      <img style={{ width: '100%' }} src={uploadedFile.filePath} alt='' />
+                    </div>
+                ) : null} */}
+                <input
+                  type='submit'
+                  value='Upload'
+                  className='btn btn-primary btn-block mt-4'
+                />
+              </td>
+            </tr>
+            </table>
+        </form>
+      </div>
     </Fragment>
   );
 };
