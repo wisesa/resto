@@ -11,7 +11,7 @@ import {
 const initialState = { 
     menus: [],
     menu: null,
-    loading:true,
+    loadingMenu:true,
     error:{}
  }
 
@@ -23,37 +23,37 @@ const initialState = {
             return {
                 ...state,
                 menus: payload,
-                loading:false
+                loadingMenu:false
             }
          case GET_MENU:
             return {
                 ...state,
                 menu: payload,
-                loading:false
+                loadingMenu:false
             }
          case ADD_MENU:
             return{
                 ...state,
                 menus: [payload,...state.menus],
-                loading:false
+                loadingMenu:false
             }
          case EDIT_MENU:
             return{
                 ...state,
                 menus: state.menus.filter(menu=>menu._id !== payload),
-                loading:false
+                loadingMenu:false
             }
          case DELETE_MENU:
             return{
                 ...state,
                 menus: state.menus.filter(menu=>menu._id !== payload),
-                loading:false
+                loadingMenu:false
             }
          case MENU_ERROR:
             return {
                 ...state,
                 error: payload,
-                loading:false
+                loadingMenu:false
             }
         default:
             return state;

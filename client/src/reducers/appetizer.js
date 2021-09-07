@@ -9,7 +9,7 @@ import {
 const initialState = { 
     appetizers: [],
     appetizer: null,
-    loading:true,
+    loadingAppetizer:true,
     error:{}
  }
 
@@ -21,25 +21,25 @@ const initialState = {
             return {
                 ...state,
                 appetizers: payload,
-                loading:false
+                loadingAppetizer:false
             }
          case GET_APPETIZER:
             return {
                 ...state,
                 appetizer: payload,
-                loading:false
+                loadingAppetizer:false
             }
          case DELETE_APPETIZER:
             return{
                 ...state,
                 appetizers: state.appetizers.filter(appetizer=>appetizer._id !== payload),
-                loading:false
+                loadingAppetizer:false
             }
          case APPETIZER_ERROR:
             return {
                 ...state,
                 error: payload,
-                loading:false
+                loadingAppetizer:false
             }
         default:
             return state;

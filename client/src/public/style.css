@@ -7,6 +7,30 @@ body {
     overflow-x: hidden;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
+.print{
+    margin-top:120px !important;
+    border-radius: 4pt;  
+    border:1px solid gray;
+    padding:20px 20px;
+}
+
+.logo-print{
+    width:80px;
+}
+
+hr{
+    border:2px solid rgb(78, 78, 78);
+    border-radius: 4pt;
+}
+
+.print>div{
+    color:black !important;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: "Calibri", sans-serif;
 }

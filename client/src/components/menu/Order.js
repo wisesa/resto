@@ -11,41 +11,78 @@ import {getAppetizers} from '../../actions/menu';
 import {getMaincourses} from '../../actions/menu';
 import {getDesserts} from '../../actions/menu';
 import { getMenu } from '../../actions/menu';
+import dessert from '../../reducers/dessert';
+import axios from 'axios';
 
 const Order = (
 
     {
-        getAppetizers, appetizer: {appetizers, loading},
-        getMaincourses, maincourse: {maincourses},
-        getDesserts, dessert: {desserts},
-        getMenu,
+        getAppetizers, appetizer: {appetizers, loadingAppetizer},
+        getMaincourses, maincourse: {maincourses, loadingMaincourse},
+        getDesserts, dessert: {desserts, loadingDessert},
+        getMenu, menu:{menus, loadingMenu}
     }
     ) => {
-  
+
+        const onSubmit = async e => {
+          e.preventDefault();
+          const formData = new FormData();
+
+          let totalPrice=0;
+
+          for(let i=0;i<appetizers.length;i++){
+            formData.append('chk', (cartAppetizer[i].id+"|"+cartAppetizer[i].name+"|"+cartAppetizer[i].price+"|"+cartAppetizer[i].amount));
+            if(cartAppetizer[i].amount>0)
+              totalPrice=totalPrice+(parseInt(cartAppetizer[i].price*cartAppetizer[i].amount));
+          }
+
+          for(let i=0;i<maincourses.length;i++){
+            formData.append('chk', (cartMaincourse[i].id+"|"+cartMaincourse[i].name+"|"+cartMaincourse[i].price+"|"+cartMaincourse[i].amount));
+            if(cartMaincourse[i].amount>0)
+              totalPrice=totalPrice+(parseInt(cartMaincourse[i].price*cartMaincourse[i].amount));
+          }
+
+          for(let i=0;i<desserts.length;i++){
+            formData.append('chk', (cartDessert[i].id+"|"+cartDessert[i].name+"|"+cartDessert[i].price+"|"+cartDessert[i].amount));
+            if(cartDessert[i].amount>0)
+              totalPrice=totalPrice+(parseInt(cartDessert[i].price*cartDessert[i].amount));
+          }
+          
+          formData.append('total', totalPrice);
+
+          try {
+            const res = await axios.post('/api/transaction', formData, {
+              headers: {
+                'Content-Type': 'multipart/form-data'
+              }
+            });
+
+            const id = res.data;
+
+            window.location = `/print/${res.data}`;
+          } catch (err) {
+            console.log(err);
+          }
+        };
+      
         const [minimizeChart, setMinimizeChart] = useState([]);
-        const [maximizeChart, setMaximizeChart] = useState([]);
+        const [maximizeChart, setMaximizeChart] = useState(['none']);
         const [totalCart, setTotalCart] = useState([0]);
 
+        const checkCart = (event) => {
+          event.preventDefault();
+        };
+      
         //Cart Appetizer
         const [cartAppetizer, setCartAppetizer] = useState([]);
-      
-        const addAppetizer = (event,index) => {
+        const addAppetizer = (event,index,id,name,price) => {
           event.preventDefault();
-          if(!cartAppetizer[index]){
-            console.log('Add'+index);
-            setCartAppetizer([
-              ...cartAppetizer,
-              {
-                id: index,
-                amount: 1
-              }
-            ]);
-          }else{
-            console.log('Update'+index);
-            
-            cartAppetizer[index].amount=cartAppetizer[index].amount+1;
-            setCartAppetizer(cartAppetizer);
-          }
+
+          cartAppetizer[index].id=id;
+          cartAppetizer[index].name=name;
+          cartAppetizer[index].price=price;
+          cartAppetizer[index].amount=cartAppetizer[index].amount+1;
+          setCartAppetizer(cartAppetizer);
           setTotalCart(parseInt(totalCart+1));
         };
       
@@ -60,89 +97,119 @@ const Order = (
 
         //Cart Maincourse
         const [cartMaincourse, setCartMaincourse] = useState([]);
-      
-        const addMaincourse = (event,index) => {
+        const addMaincourse = (event,index,id,name,price) => {
           event.preventDefault();
-          if(!cartMaincourse[index]){
-            console.log('Add'+index);
-            setCartMaincourse([
-              ...cartMaincourse,
-              {
-                id: index,
-                amount: 1
-              }
-            ]);
-          }else{
-            console.log('Update'+index);
-            
-            cartMaincourse[index].amount=cartMaincourse[index].amount+1;
-            setCartMaincourse(cartMaincourse);
-          }
+          console.log('Add '+index);
+          cartMaincourse[index].id=id;
+          cartMaincourse[index].name=name;
+          cartMaincourse[index].price=price;
+          cartMaincourse[index].amount=cartMaincourse[index].amount+1;
+          setCartMaincourse(cartMaincourse);
           setTotalCart(parseInt(totalCart+1));
         };
       
         const decreaseMaincourse = (event, index) => {
           event.preventDefault();
-          cartMaincourse[index].amount=cartMaincourse[index].amount-1;
-          setCartMaincourse(cartMaincourse);
-          setTotalCart(parseInt(totalCart-1));
+          if(cartMaincourse[index].amount>0){
+            cartMaincourse[index].amount=cartMaincourse[index].amount-1;
+            setCartMaincourse(cartMaincourse);
+            setTotalCart(parseInt(totalCart-1));
+          }
         };
 
         //Cart Dessert
         const [cartDessert, setCartDessert] = useState([]);
-      
-        const addDessert = (event,index) => {
+        const addDessert = (event,index,id,name,price) => {
           event.preventDefault();
-          if(!cartDessert[index]){
-            console.log('Add'+index);
-            setCartDessert([
-              ...cartDessert,
-              {
-                id: index,
-                amount: 1
-              }
-            ]);
-          }else{
-            console.log('Update'+index);
-            
-            cartDessert[index].amount=cartDessert[index].amount+1;
-            setCartDessert(cartDessert);
-          }
+          console.log('Add '+index);
+          cartDessert[index].id=id;
+          cartDessert[index].name=name;
+          cartDessert[index].price=price;
+          cartDessert[index].amount=cartDessert[index].amount+1;
+          setCartDessert(cartDessert);
           setTotalCart(parseInt(totalCart+1));
         };
       
         const decreaseDessert = (event, index) => {
           event.preventDefault();
-          cartDessert[index].amount=cartDessert[index].amount-1;
-          setCartDessert(cartDessert);
-          setTotalCart(parseInt(totalCart-1));
+          if(cartDessert[index].amount>0){
+            cartDessert[index].amount=cartDessert[index].amount-1;
+            setCartDessert(cartDessert);
+            setTotalCart(parseInt(totalCart-1));
+          }
         };
 
     useEffect(()=>{
         getAppetizers();
-    }, [getAppetizers]);
+
+        if(!loadingAppetizer){
+          for(let i=0;i<appetizers.length;i++){
+            const appetizer = {
+              id: 0,
+              amount: 0
+            };
+            cartAppetizer.push(appetizer)
+          }
+        }
+        //console.log(appetizers.length);
+
+    }, [loadingAppetizer, getAppetizers]);
 
     useEffect(()=>{
         getMaincourses();
-    }, [getMaincourses]);
+
+        if(!loadingMaincourse){
+          for(let i=0;i<maincourses.length;i++){
+            const maincourse = {
+              id: 0,
+              amount: 0
+            };
+            cartMaincourse.push(maincourse)
+          }
+        }
+
+        //console.log(maincourses.length);
+    }, [loadingMaincourse, getMaincourses]);
 
     useEffect(()=>{
-        getDesserts();
-    }, [getDesserts]);
+      getDesserts();
+
+      if(!loadingDessert){
+        for(let i=0;i<desserts.length;i++){
+          const dessert = {
+            id: 0,
+            amount: 0
+          };
+          cartDessert.push(dessert)
+        }
+      }
+      //console.log(desserts.length);
+    }, [loadingDessert, getDesserts]);
 
     useEffect(() => {
       getMenu("60ca12ffed908ca010a3e7c2"); //dummy data
     
-    }, [loading, getMenu]);
+    }, [loadingMenu, getMenu]);
 
-    return loading ? (
+    return loadingAppetizer || loadingMaincourse || loadingDessert || loadingMenu ? (
         <Spinner />
     ) : (
         <Fragment>
+          <form onSubmit={onSubmit}>
             <div className="row d-flex flex-column-xl justify-content-center mt-5">
                 <div className="appetizers d-flex flex-column align-items-center center m-2">
                     <div className="d-flex justify-content-between mt-5">
                         <h2 className="dish-type mr-3">Appetizer</h2>
+                        <button onClick={(event) => checkCart(event)}
+                                type="button"
+                                className="btn btn-danger mr-2">
+                                    Check
+                            </button>
+                            <input
+                  type='submit'
+                  value='Submit'
+                  className='btn btn-primary btn-block mt-4'
+                />
                     </div>
                     {appetizers.map((appetizer,index) => (
                       <div className="menu bg-white d-flex align-items-center">
@@ -161,10 +228,11 @@ const Order = (
                         </div>
                         <div className="center">
                           <h3 className="my-1">
-                            <input type="text" id={"appetizer-"+index} name="chk[]" value={appetizer._id+"|"+appetizer.name+"|"+appetizer.price+"|"+(cartAppetizer[index] ? cartAppetizer[index].amount : 0)} />
-                            <button onClick={(event) => addAppetizer(event,index)}
+                          <input type="hidden" id={"maincourse-"+index} name="chk[]" 
+                            value={(cartAppetizer[index] ? (cartAppetizer[index].amount>0 ? appetizer._id+"|"+appetizer.name+"|"+appetizer.price+"|"+appetizer.amount : '' ) : '')} />
+                            <button onClick={(event) => addAppetizer(event,index,appetizer._id,appetizer.name,appetizer.price)}
                                 type="button"
-                                className="btn btn-danger">
+                                className="btn btn-danger mr-2">
                                     {<i className="fas fa-plus"></i>}
                             </button>
                             <button onClick={(event) => decreaseAppetizer(event,index)}
@@ -182,7 +250,7 @@ const Order = (
                         <h2 className="dish-type mr-3">Main Course</h2>
                     </div>
                     {maincourses.map((maincourse,index) => (
-                        <div className="menu bg-white d-flex align-items-center">
+                      <div className="menu bg-white d-flex align-items-center">
                         <div>
                           <img className="img-menu" src={`http://localhost:5000/menu/${maincourse.pic}`} />
                         </div>
@@ -198,10 +266,11 @@ const Order = (
                         </div>
                         <div className="center">
                           <h3 className="my-1">
-                            <input type="text" id={"maincourse-"+index} name="chk[]" value={(cartMaincourse[index] ? cartMaincourse[index].amount : null)+" "+maincourse._id+"|"+maincourse.name+"|"+maincourse.price+"|"+maincourse.amount} />
-                            <button onClick={(event) => addMaincourse(event,index)}
+                          <input type="hidden" id={"maincourse-"+index} name="chk[]" 
+                            value={(cartMaincourse[index] ? (cartMaincourse[index].amount>0 ? maincourse._id+"|"+maincourse.name+"|"+maincourse.price+"|"+maincourse.amount : '' ) : '')} />
+                            <button onClick={(event) => addMaincourse(event,index,maincourse._id,maincourse.name,maincourse.price)}
                                 type="button"
-                                className="btn btn-danger">
+                                className="btn btn-danger mr-2">
                                     {<i className="fas fa-plus"></i>}
                             </button>
                             <button onClick={(event) => decreaseMaincourse(event,index)}
@@ -235,10 +304,11 @@ const Order = (
                         </div>
                         <div className="center">
                           <h3 className="my-1">
-                            <input type="text" id={"maincourse-"+index} name="chk[]" value={(cartDessert[index] ? cartDessert[index].amount : null)+" "+dessert._id+"|"+dessert.name+"|"+dessert.price+"|"+dessert.amount} />
-                            <button onClick={(event) => addDessert(event,index)}
+                            <input type="hidden" id={"dessert-"+index} name="chk[]" 
+                            value={(cartDessert[index] ? (cartDessert[index].amount>0 ? dessert._id+"|"+dessert.name+"|"+dessert.price+"|"+dessert.amount : '' ) : '')} />
+                            <button onClick={(event) => addDessert(event,index,dessert._id,dessert.name,dessert.price)}
                                 type="button"
-                                className="btn btn-danger">
+                                className="btn btn-danger mr-2">
                                     {<i className="fas fa-plus"></i>}
                             </button>
                             <button onClick={(event) => decreaseDessert(event,index)}
@@ -251,11 +321,12 @@ const Order = (
                       </div>
                     ))}
                 </div>
-            </div>
+              </div>
+            </form>
             <div className={"cart-mini "+minimizeChart} onClick={(event) => setMaximizeChart('')}>
                 <div className="row">
                     <div className="col-lg-6 center mb-3">
-                      <img class="img-cart" src="/img/cart.png" />
+                      <img className="img-cart" src="/img/cart.png" />
                     </div>
                     <div className="col-lg-6 center mb-3">
                       <div className="lbl-cart ">
@@ -274,30 +345,31 @@ const Order = (
                     
                     {appetizers.map((appetizer,index) => (
                       (!cartAppetizer[index] ? null : (<div className={"col-lg-12 "+(cartAppetizer[index].amount>0 ? null : "none")}>
-                      <div className="row">
-                        <div className="col-lg-6 left">{appetizer.name}</div>
-                        <div className="col-lg-2 center">{cartAppetizer[index] ? 'x '+cartAppetizer[index].amount : 'x 0'}</div>
-                        <div className="col-lg-4 right">{new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(appetizer.price)}</div>
-                      </div>
-                    </div>))
+                        <div className="row">
+                            <div className="col-lg-6 left">{appetizer.name}</div>
+                            <div className="col-lg-2 center">{cartAppetizer[index] ? 'x '+cartAppetizer[index].amount : 'x 0'}</div>
+                            <div className="col-lg-4 right">{new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(appetizer.price)}</div>
+                          </div>
+                        </div>))
                     ))}
                     {maincourses.map((maincourse,index) => (
-                        <div className="col-lg-12">
-                          <div className="row">
+                      (!cartMaincourse[index] ? null : (<div className={"col-lg-12 "+(cartMaincourse[index].amount>0 ? null : "none")}>
+                        <div className="row">
                             <div className="col-lg-6 left">{maincourse.name}</div>
                             <div className="col-lg-2 center">{cartMaincourse[index] ? 'x '+cartMaincourse[index].amount : 'x 0'}</div>
                             <div className="col-lg-4 right">{new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(maincourse.price)}</div>
                           </div>
-                        </div>
+                        </div>))
                     ))}
                     {desserts.map((dessert,index) => (
-                        <div className="col-lg-12">
-                        <div className="row">
-                        <div className="col-lg-6 left">{dessert.name}</div>
-                        <div className="col-lg-2 center">{cartDessert[index] ? 'x '+cartDessert[index].amount : 'x 0'}</div>
-                        <div className="col-lg-4 right">{new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(dessert.price)}</div>
+                      (!cartDessert[index] ? null : (<div className={"col-lg-12 "+(cartDessert[index].amount>0 ? null : "none")}>
+                          <div className="row">
+                            <div className="col-lg-6 left">{dessert.name}</div>
+                            <div className="col-lg-2 center">{cartDessert[index] ? 'x '+cartDessert[index].amount : 'x 0'}</div>
+                            <div className="col-lg-4 right">{new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(dessert.price)}</div>
+                          </div>
                         </div>
-                        </div>
+                      ))
                     ))}
                 </div>
             </div>

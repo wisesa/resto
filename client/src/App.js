@@ -15,6 +15,7 @@ import Order from './components/menu/Order';
 import Transactions from './components/transaction/Transactions';
 import Menu from './components/menu/MenuItem';
 import PrivateRoute from './components/routing/PrivateRoute';
+import Print from './components/transaction/Print';
 
 //Redux
 import {Provider} from 'react-redux';
@@ -49,7 +50,7 @@ const App = () => {
                                 <Route exact path="/register" component={Register} />
                                 <Route exact path="/login" component={Login} />
                                 <Route exact path="/order" component={Order} />
-                                <Route exact path="/temp/:id" component={Temp} />
+                                <Route exact path="/print/:id" component={Print} />
                                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
                                 <PrivateRoute exact path="/addmenu" component={AddMenu} />
                                 <PrivateRoute exact path="/editmenu/:id" component={EditMenu} />

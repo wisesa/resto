@@ -8,6 +8,7 @@ import appetizer from './appetizer';
 import maincourse from './maincourse';
 import dessert from './dessert';
 import transaction from './transaction';
+import item from './item';
 
 export default combineReducers({
     alert,
@@ -18,5 +19,6 @@ export default combineReducers({
     appetizer,
     maincourse,
     dessert,
-    transaction
+    transaction,
+    item
 });

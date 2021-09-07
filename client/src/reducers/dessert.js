@@ -9,7 +9,7 @@ import {
 const initialState = { 
     desserts: [],
     dessert: null,
-    loading:true,
+    loadingDessert:true,
     error:{}
  }
 
@@ -21,25 +21,25 @@ const initialState = {
             return {
                 ...state,
                 desserts: payload,
-                loading:false
+                loadingDessert:false
             }
          case GET_DESSERT:
             return {
                 ...state,
                 dessert: payload,
-                loading:false
+                loadingDessert:false
             }
          case DELETE_DESSERT:
             return{
                 ...state,
                 desserts: state.desserts.filter(dessert=>dessert._id !== payload),
-                loading:false
+                loadingDessert:false
             }
          case DESSERT_ERROR:
             return {
                 ...state,
                 error: payload,
-                loading:false
+                loadingDessert:false
             }
         default:
             return state;

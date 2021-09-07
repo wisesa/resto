@@ -23,7 +23,7 @@ const Landing=({login,isAuthenticated})=>{
                             <h1>Archipelago's</h1>
                             <h2>We are handling the best of Indonesian Cuisine</h2>
                             <div className="d-lg-flex justify-content-center">
-                                <a href="/api/menu" className="btn-get-started scrollto">Order Here</a>
+                                <a href="/order" className="btn-get-started scrollto">Order Here</a>
                             </div>
                         </div>
                     </div>

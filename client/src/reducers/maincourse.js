@@ -9,7 +9,7 @@ import {
 const initialState = { 
     maincourses: [],
     maincourse: null,
-    loading:true,
+    loadingMaincourse:true,
     error:{}
  }
 
@@ -21,25 +21,25 @@ const initialState = {
             return {
                 ...state,
                 maincourses: payload,
-                loading:false
+                loadingMaincourse:false
             }
          case GET_MAINCOURSE:
             return {
                 ...state,
                 maincourse: payload,
-                loading:false
+                loadingMaincourse:false
             }
          case DELETE_MAINCOURSE:
             return{
                 ...state,
                 maincourses: state.maincourses.filter(maincourse=>maincourse._id !== payload),
-                loading:false
+                loadingMaincourse:false
             }
          case MAINCOURSE_ERROR:
             return {
                 ...state,
                 error: payload,
-                loading:false
+                loadingMaincourse:false
             }
         default:
             return state;

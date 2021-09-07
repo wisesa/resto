@@ -1,0 +1,73 @@
+[{
+  "_id": {
+    "$oid": "6097ab7948d224f958867917"
+  },
+  "name": "Brad Wisesa",
+  "email": "superman.wisesa@gmail.com",
+  "avatar": "//www.gravatar.com/avatar/bb1120ef9c984e780f5f2c1d84f2cfb5?s=200&r=pg&d=mm",
+  "password": "$2a$10$HNcx3.KRR28VIMOSBDuWZOWeZ3N5DSPCH8jGYv2jT6jTFIaFv7Fni",
+  "date": {
+    "$date": "2021-05-09T09:29:29.506Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "609cc0c66eb12544a196f1c9"
+  },
+  "name": "John Doe",
+  "email": "jdoe@gmail.com",
+  "avatar": "//www.gravatar.com/avatar/b2b146dba9e0023cb56637f0df4aa005?s=200&r=pg&d=mm",
+  "password": "$2a$10$HNcx3.KRR28VIMOSBDuWZOWeZ3N5DSPCH8jGYv2jT6jTFIaFv7Fni",
+  "date": {
+    "$date": "2021-05-13T06:01:42.291Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60aa1769e34e3f19e5c1fd61"
+  },
+  "name": "Franky",
+  "email": "franky@gmail.com",
+  "avatar": "//www.gravatar.com/avatar/b494020235d6fcb4515aca901d5ddddb?s=200&r=pg&d=mm",
+  "password": "$2a$10$svLZaRLiQOqTWhG3yb2mt.gz8SII0/5Kklet8qvjjjWlL8HJA5b7C",
+  "date": {
+    "$date": "2021-05-23T08:50:49.702Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60adc1cb52e6400021d8bab6"
+  },
+  "name": "Sara Smith",
+  "email": "sara@gmail.com",
+  "avatar": "//www.gravatar.com/avatar/246084d5b85c4f86e84b641f86bd7175?s=200&r=pg&d=mm",
+  "password": "$2a$10$Ylo/blaFERS0hH1SnwgXTuAw/nyOuVqzzCGp5APvZagREjOjqa0Bi",
+  "date": {
+    "$date": "2021-05-26T03:34:35.474Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60adc28a5642e7742406551e"
+  },
+  "name": "Rini",
+  "email": "rini@gmail.com",
+  "avatar": "//www.gravatar.com/avatar/59c53b5e9f06fe24be5ed348c0a5f3d4?s=200&r=pg&d=mm",
+  "password": "$2a$10$.WI1oIr5NKZ7M/6idHxJnOqNlX5GVeQh/HvjYaqcyDRUjH4dBgRcO",
+  "date": {
+    "$date": "2021-05-26T03:37:46.095Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60add7d3a84aa61e251c30b7"
+  },
+  "name": "Andy",
+  "email": "andy@gmail.com",
+  "avatar": "//www.gravatar.com/avatar/33fb83f28a4814a0236a9d0e96ec20c8?s=200&r=pg&d=mm",
+  "password": "$2a$10$FoRUBUhCw3nHFzx8VPsOU.mG07BdBka0PDHk20dr9PkQMvXrlE6IO",
+  "date": {
+    "$date": "2021-05-26T05:08:35.781Z"
+  },
+  "__v": 0
+}]

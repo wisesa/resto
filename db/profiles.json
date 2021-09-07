@@ -1,0 +1,176 @@
+[{
+  "_id": {
+    "$oid": "609cbd0d56dc46efacca7fcb"
+  },
+  "skills": [
+    "HTML",
+    "CSS",
+    "PHP",
+    "Ruby",
+    "JS"
+  ],
+  "user": {
+    "$oid": "6097ab7948d224f958867917"
+  },
+  "company": "Traversy Media",
+  "website": "https://www.traversymedia.com",
+  "location": "Boston, MA",
+  "bio": "I am a developer and instructor for Traversy Media",
+  "status": "Instructor",
+  "githubusername": "bradtraversy",
+  "social": {
+    "youtube": "https://youtube.com/traversymedia",
+    "twitter": "https://twitter.com/traversymedia"
+  },
+  "experience": [
+    {
+      "current": false,
+      "_id": {
+        "$oid": "609d2c6e65e1835bd1c53cc9"
+      },
+      "title": "Web Developer",
+      "company": "Tech Guy Web Solution",
+      "location": "Boston",
+      "from": {
+        "$date": "2006-01-04T17:00:00Z"
+      },
+      "to": {
+        "$date": "2009-01-06T17:00:00Z"
+      },
+      "description": "Full stack web dev"
+    }
+  ],
+  "education": [],
+  "date": {
+    "$date": "2021-05-13T05:45:49.123Z"
+  },
+  "__v": 7
+},{
+  "_id": {
+    "$oid": "609cc1146eb12544a196f1ca"
+  },
+  "skills": [
+    "HTML,CSS,JS"
+  ],
+  "user": {
+    "$oid": "609cc0c66eb12544a196f1c9"
+  },
+  "company": "TechSoft INC",
+  "website": "https://www.traversymedia.com",
+  "location": "Boston, MA",
+  "bio": "I am a developer and instructor for Traversy Media",
+  "status": "Junior Developer",
+  "githubusername": "johndoe",
+  "social": {},
+  "experience": [
+    {
+      "current": true,
+      "_id": {
+        "$oid": "60bae5e4de6ca09ad44a0485"
+      },
+      "title": "Senior Developer",
+      "company": "PT. Abadi",
+      "location": "Malang",
+      "from": {
+        "$date": "2019-06-02T00:00:00Z"
+      },
+      "to": null,
+      "description": "vxzvxvzxv"
+    },
+    {
+      "current": true,
+      "_id": {
+        "$oid": "60bae5161f954f9a38253eb8"
+      },
+      "title": "Junior Developer",
+      "company": "GRIP",
+      "location": "Batam",
+      "from": {
+        "$date": "2019-06-03T00:00:00Z"
+      },
+      "to": {
+        "$date": "2021-06-04T00:00:00Z"
+      },
+      "description": "asfdsfdsfsdfsdf"
+    }
+  ],
+  "education": [
+    {
+      "current": true,
+      "_id": {
+        "$oid": "60bae62a536c4a2f453524d2"
+      },
+      "school": "UNISMA",
+      "degree": "S-1",
+      "fieldofstudy": "Accounting",
+      "from": {
+        "$date": "2021-06-03T00:00:00Z"
+      },
+      "to": null,
+      "description": "fsdfsfsdf"
+    }
+  ],
+  "date": {
+    "$date": "2021-05-13T06:03:00.895Z"
+  },
+  "__v": 3
+},{
+  "_id": {
+    "$oid": "60b1b483231e89fa8c2e3f1d"
+  },
+  "skills": [
+    "Cooking"
+  ],
+  "user": {
+    "$oid": "60adc28a5642e7742406551e"
+  },
+  "company": "GRIP",
+  "website": "sdfsf",
+  "location": "Indonesia",
+  "bio": "I am a happy eater",
+  "status": "Junior Developer",
+  "experience": [
+    {
+      "current": true,
+      "_id": {
+        "$oid": "60b2404e1bd0344b8df4c260"
+      },
+      "title": "Junior Developer",
+      "company": "GRIP",
+      "location": "Malang",
+      "from": {
+        "$date": "2021-05-01T00:00:00Z"
+      },
+      "to": null,
+      "description": "Junior Developer"
+    }
+  ],
+  "education": [
+    {
+      "current": true,
+      "_id": {
+        "$oid": "60b246e7d666dab7c0f62d92"
+      },
+      "school": "UNISMA",
+      "degree": "S-1",
+      "fieldofstudy": "Accounting",
+      "from": {
+        "$date": "2021-05-01T00:00:00Z"
+      },
+      "to": null,
+      "description": "Accounting"
+    }
+  ],
+  "date": {
+    "$date": "2021-05-29T03:26:59.316Z"
+  },
+  "__v": 6,
+  "social": {
+    "youtube": "riniyoutube",
+    "twitter": "rinitwitter",
+    "facebook": "rinifacebook",
+    "linkedin": "rinilinkedin",
+    "instagram": "riniig"
+  },
+  "githubusername": "fsdfsdfsdf"
+}]
