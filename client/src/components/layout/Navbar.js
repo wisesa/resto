@@ -27,20 +27,24 @@ const Navbar=({ auth: { isAuthenticated, loading }, logout })=>{
       </li>
     </ul>
   );
-
-  const guestLinks=(
-    <ul className="navbar-nav ml-auto">
-      <li className="nav-item mr-3">
-        <a className="nav-link js-scroll-trigger" href="#hero">Hero</a>
-      </li>
-      <li className="nav-item mr-3">
-         <a className="nav-link js-scroll-trigger" href="#about">About</a>
-      </li>
-      <li className="nav-item mr-3">
-        <a className="nav-link js-scroll-trigger" href="#team">Team</a>
-      </li>
-    </ul>
-  );
+  
+  let guestLinks=null;
+  const pathname = window.location.pathname;
+  if(pathname!='/order' && pathname!='/print'){
+    guestLinks=(
+      <ul className="navbar-nav ml-auto">
+        <li className="nav-item mr-3">
+          <a className="nav-link js-scroll-trigger" href="#hero">Hero</a>
+        </li>
+        <li className="nav-item mr-3">
+           <a className="nav-link js-scroll-trigger" href="#about">About</a>
+        </li>
+        <li className="nav-item mr-3">
+          <a className="nav-link js-scroll-trigger" href="#team">Team</a>
+        </li>
+      </ul>
+    );
+  }
 
   const navbar=(
       <nav className="navbar bg-dark">

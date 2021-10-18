@@ -68,6 +68,7 @@ const Order = (
         const [minimizeChart, setMinimizeChart] = useState([]);
         const [maximizeChart, setMaximizeChart] = useState(['none']);
         const [totalCart, setTotalCart] = useState([0]);
+        const [totalPrice, setTotalPrice] = useState([0]);
 
         const checkCart = (event) => {
           event.preventDefault();
@@ -84,6 +85,9 @@ const Order = (
           cartAppetizer[index].amount=cartAppetizer[index].amount+1;
           setCartAppetizer(cartAppetizer);
           setTotalCart(parseInt(totalCart+1));
+
+          //Set Total Price
+          setTotalPrice(parseInt(totalPrice)+parseInt((cartAppetizer[index].price)));
         };
       
         const decreaseAppetizer = (event, index) => {
@@ -92,6 +96,9 @@ const Order = (
             cartAppetizer[index].amount=cartAppetizer[index].amount-1;
             setCartAppetizer(cartAppetizer);
             setTotalCart(parseInt(totalCart-1));
+
+            //Decrease Total Price
+            setTotalPrice(parseInt(totalPrice-cartAppetizer[index].price));
           }
         };
 
@@ -106,6 +113,9 @@ const Order = (
           cartMaincourse[index].amount=cartMaincourse[index].amount+1;
           setCartMaincourse(cartMaincourse);
           setTotalCart(parseInt(totalCart+1));
+
+          //Set Total Price
+          setTotalPrice(parseInt(totalPrice)+parseInt((cartMaincourse[index].price)));
         };
       
         const decreaseMaincourse = (event, index) => {
@@ -114,6 +124,9 @@ const Order = (
             cartMaincourse[index].amount=cartMaincourse[index].amount-1;
             setCartMaincourse(cartMaincourse);
             setTotalCart(parseInt(totalCart-1));
+
+            //Decrease Total Price
+            setTotalPrice(parseInt(totalPrice-cartMaincourse[index].price));
           }
         };
 
@@ -128,6 +141,9 @@ const Order = (
           cartDessert[index].amount=cartDessert[index].amount+1;
           setCartDessert(cartDessert);
           setTotalCart(parseInt(totalCart+1));
+
+          //Set Total Price
+          setTotalPrice(parseInt(totalPrice)+parseInt((cartDessert[index].price)));
         };
       
         const decreaseDessert = (event, index) => {
@@ -136,6 +152,9 @@ const Order = (
             cartDessert[index].amount=cartDessert[index].amount-1;
             setCartDessert(cartDessert);
             setTotalCart(parseInt(totalCart-1));
+
+            //Decrease Total Price
+            setTotalPrice(parseInt(totalPrice-cartDessert[index].price));
           }
         };
 
@@ -200,16 +219,6 @@ const Order = (
                 <div className="appetizers d-flex flex-column align-items-center center m-2">
                     <div className="d-flex justify-content-between mt-5">
                         <h2 className="dish-type mr-3">Appetizer</h2>
-                        <button onClick={(event) => checkCart(event)}
-                                type="button"
-                                className="btn btn-danger mr-2">
-                                    Check
-                            </button>
-                            <input
-                  type='submit'
-                  value='Submit'
-                  className='btn btn-primary btn-block mt-4'
-                />
                     </div>
                     {appetizers.map((appetizer,index) => (
                       <div className="menu bg-white d-flex align-items-center">
@@ -322,57 +331,66 @@ const Order = (
                     ))}
                 </div>
               </div>
-            </form>
-            <div className={"cart-mini "+minimizeChart} onClick={(event) => setMaximizeChart('')}>
-                <div className="row">
-                    <div className="col-lg-6 center mb-3">
-                      <img className="img-cart" src="/img/cart.png" />
-                    </div>
-                    <div className="col-lg-6 center mb-3">
-                      <div className="lbl-cart ">
-                        {totalCart}
-                      </div>
-                    </div>
-                </div>
+            <div className={"d-flex justify-content-center cart-mini "+minimizeChart} onClick={(event) => setMaximizeChart('')}>
+              <div className="lbl-cart mr-3">
+                {totalCart}
+              </div>
+              <img className="img-cart" src="/img/cart.png" />
             </div>
             <div className={"cart "+maximizeChart}>
                 <div className="row">
-                    <div className="col-lg-4 center mb-4"></div>
-                    <div className="col-lg-4 center mb-4"><h3>My Cart</h3></div>
-                    <div className="col-lg-4 right mb-4">
+                    <div className="col-lg-4 col-md-4 col-sm-4 center mb-4"></div>
+                    <div className="col-lg-4 col-md-4 col-sm-4 center mb-4"><h3>My Cart</h3></div>
+                    <div className="col-lg-4 col-md-4 col-sm-4 right mb-4">
                       <div className="lbl-x" onClick={(event) => setMaximizeChart('none')}>x</div>
                     </div>
                     
                     {appetizers.map((appetizer,index) => (
                       (!cartAppetizer[index] ? null : (<div className={"col-lg-12 "+(cartAppetizer[index].amount>0 ? null : "none")}>
                         <div className="row">
-                            <div className="col-lg-6 left">{appetizer.name}</div>
-                            <div className="col-lg-2 center">{cartAppetizer[index] ? 'x '+cartAppetizer[index].amount : 'x 0'}</div>
-                            <div className="col-lg-4 right">{new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(appetizer.price)}</div>
+                            <div className="col-lg-6 col-md-6 col-sm-6 left">{appetizer.name}</div>
+                            <div className="col-lg-2 col-md-2 col-sm-2 center">{cartAppetizer[index] ? 'x '+cartAppetizer[index].amount : 'x 0'}</div>
+                            <div className="col-lg-4 col-md-4 col-sm-4 right">{new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(appetizer.price)}</div>
                           </div>
                         </div>))
                     ))}
                     {maincourses.map((maincourse,index) => (
                       (!cartMaincourse[index] ? null : (<div className={"col-lg-12 "+(cartMaincourse[index].amount>0 ? null : "none")}>
                         <div className="row">
-                            <div className="col-lg-6 left">{maincourse.name}</div>
-                            <div className="col-lg-2 center">{cartMaincourse[index] ? 'x '+cartMaincourse[index].amount : 'x 0'}</div>
-                            <div className="col-lg-4 right">{new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(maincourse.price)}</div>
+                            <div className="col-lg-6 col-md-6 col-sm-6 left">{maincourse.name}</div>
+                            <div className="col-lg-2 col-md-2 col-sm-2 center">{cartMaincourse[index] ? 'x '+cartMaincourse[index].amount : 'x 0'}</div>
+                            <div className="col-lg-4 col-md-4 col-sm-4 right">{new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(maincourse.price)}</div>
                           </div>
                         </div>))
                     ))}
                     {desserts.map((dessert,index) => (
                       (!cartDessert[index] ? null : (<div className={"col-lg-12 "+(cartDessert[index].amount>0 ? null : "none")}>
                           <div className="row">
-                            <div className="col-lg-6 left">{dessert.name}</div>
-                            <div className="col-lg-2 center">{cartDessert[index] ? 'x '+cartDessert[index].amount : 'x 0'}</div>
-                            <div className="col-lg-4 right">{new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(dessert.price)}</div>
+                            <div className="col-lg-6 col-md-6 col-sm-6 left">{dessert.name}</div>
+                            <div className="col-lg-2 col-md-2 col-sm-2 center">{cartDessert[index] ? 'x '+cartDessert[index].amount : 'x 0'}</div>
+                            <div className="col-lg-4 col-md-4 col-sm-4 right">{new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(dessert.price)}</div>
                           </div>
                         </div>
                       ))
                     ))}
+
+                    <div className="col-lg-6 col-md-6 col-sm-6 mt-3">Total</div>
+                    <div className="col-lg-2 col-md-2 col-sm-2 mt-3"></div>
+                    <div className="col-lg-4 col-md-4 col-sm-4 mt-3 right">{new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(totalPrice)}</div>
+                    
+                    <div className="col-lg-2"></div>
+                    <div className="col-lg-8 center mb-4">
+                      <input
+                        type='submit'
+                        value='PURCHASE'
+                        className='btn btn-primary mt-4'
+                      />
+                    </div>
+                    <div className="col-lg-2">
+                    </div>
                 </div>
             </div>
+            </form>
         </Fragment>
     );
 };

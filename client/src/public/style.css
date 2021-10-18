@@ -190,6 +190,10 @@ input[type=file]{
     width:50px;
 }
 
+.btn-hamburger{
+    margin-right:20px;
+}
+
 
 /*--------------------------------------------------------------
 # Header
@@ -827,7 +831,7 @@ h1 {
     background-color: red;
     width:35px;
     height:35px;
-    padding-top:3px;
+    padding:3px 0 0 12px;
 }
 
 .cart-mini{
@@ -854,6 +858,7 @@ h1 {
   bottom:20px;
   border-radius: 4pt;
   padding:10px;
+  font-size: 1.2rem;
 }
 
 #footer .copyright {
@@ -905,6 +910,16 @@ table {
     }
     #footer .credits {
         padding-top: 4px;
+    }
+
+    .cart{
+      left:15%;
+      width:70%;
+      background-color:#202020;
+      position:fixed;
+      bottom:20px;
+      border-radius: 4pt;
+      padding:10px;
     }
 }
 
@@ -959,7 +974,7 @@ span{
 @media (min-width: 1366px) {
     #hero {
         width: 100%;
-        height: 100vh;
+        height: 130vh;
     }
     .img-hero {
         background-color: white;
@@ -978,6 +993,10 @@ span{
 }
 
 @media (min-width: 1920px) {
+    #hero {
+        width: 100%;
+        height: 100vh;
+    }
     .img-menu {
         width: 100px;
     }
@@ -1061,9 +1080,31 @@ span{
     .flex-column-xl{
         flex-direction: column!important;
     }
+
+    .cart-mini{
+        cursor:pointer;
+      left:42%;
+      width:120px;
+      background-color:#202020;
+      position:fixed;
+      bottom:20px;
+      border-radius: 4pt;
+      padding:10px;
+      height:55px
+    }
 }
 
 @media (max-width: 575px) {
+    .cart{
+        left: 5%;
+        width: 90%;
+        background-color: #202020;
+        position: fixed;
+        bottom: 20px;
+        border-radius: 4pt;
+        padding: 10px;
+        font-size: 1rem;
+    }
     .basket {
         width: auto;
     }
@@ -1076,6 +1117,24 @@ span{
     }
     .img-menu {
         width: 100px;
+    }
+    .menu{
+        width:360px;
+    }
+    .cart-mini{
+      cursor:pointer;
+      left:30%;
+      width:120px;
+      background-color:#202020;
+      position:fixed;
+      bottom:20px;
+      border-radius: 4pt;
+      padding:10px;
+      height:55px
+    }
+    .mr-2{
+        margin-right:0 !important;
+        margin-bottom: 10px;
     }
     h3 {
         font-size: 1.25rem;

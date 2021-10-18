@@ -16,6 +16,11 @@ const Print = ({
         console.log(items);
     }, [getItems,loading]);
 
+    const goToOrder = (event) => {
+      event.preventDefault();
+      window.location = `/order`;
+    };
+
   //console.log(menu)
     return loading ? (
       <Spinner />
@@ -66,6 +71,7 @@ const Print = ({
         <div className="container">
           <div className="row mt-3">
               <div className="col-lg-12 right">
+                <button className="btn btn-danger" onClick={goToOrder}>Order Again</button>&nbsp;&nbsp;&nbsp;&nbsp;
                 <button className="btn btn-danger" onClick={window.print}>Print</button>
               </div>
           </div>
