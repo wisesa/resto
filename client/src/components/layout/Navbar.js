@@ -2,7 +2,7 @@ import React, {Fragment, useState} from "react";
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
-import {logout} from '../../actions/auth';
+import {logout, register} from '../../actions/auth';
 
 const Navbar=({ auth: { isAuthenticated, loading }, logout })=>{
   const authLinks=(
@@ -30,18 +30,56 @@ const Navbar=({ auth: { isAuthenticated, loading }, logout })=>{
   
   let guestLinks=null;
   const pathname = window.location.pathname;
+  
+  let aboutLinks=(
+    <li className="nav-item mr-3">
+      <a className="nav-link js-scroll-trigger" href="#about">
+        <i className="white fa fa-info"></i>{''}
+        <span className="white hide-sm">&nbsp;&nbsp;About</span>
+      </a>
+    </li>
+  );
+
+  let teamLinks=(
+    <li className="nav-item mr-3">
+      <a className="nav-link js-scroll-trigger" href="#team">
+        <i className="white fas fa-people-arrows"></i>{''}
+        <span className="white hide-sm">&nbsp;&nbsp;Team</span>
+      </a>
+    </li>
+  );
+  
+  let loginLinks=(
+    <li className="nav-item mr-3">
+      <a className="nav-link js-scroll-trigger" href="login">
+        <i className="white fas fa-sign-in-alt"></i>{''}
+        <span className="white hide-sm">&nbsp;&nbsp;Login</span>
+      </a>
+    </li>
+  );
+  
+  let registerLinks=(
+    <li className="nav-item mr-3">
+      <a className="nav-link js-scroll-trigger" href="register">
+        <i className="white fas fa-plus-circle"></i>{''}
+        <span className="white hide-sm">&nbsp;&nbsp;Register</span>
+      </a>
+    </li>
+  );
+
   if(pathname!='/order' && pathname!='/print'){
     guestLinks=(
       <ul className="navbar-nav ml-auto">
         <li className="nav-item mr-3">
-          <a className="nav-link js-scroll-trigger" href="#hero">Hero</a>
+          <a className="nav-link js-scroll-trigger" href="">
+            <i className="white fas fa-home"></i>{''}
+            <span className="white hide-sm">&nbsp;&nbsp;Home</span>
+          </a>
         </li>
-        <li className="nav-item mr-3">
-           <a className="nav-link js-scroll-trigger" href="#about">About</a>
-        </li>
-        <li className="nav-item mr-3">
-          <a className="nav-link js-scroll-trigger" href="#team">Team</a>
-        </li>
+        {pathname=='/' ? aboutLinks : null}
+        {pathname=='/' ? teamLinks : null}
+        {pathname=='/' || pathname=='/register' || pathname=='/login' || pathname=='/print' ? registerLinks : null}
+        {pathname=='/' || pathname=='/register' || pathname=='/login' || pathname=='/print' ? loginLinks : null}
       </ul>
     );
   }
