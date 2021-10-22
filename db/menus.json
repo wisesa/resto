@@ -114,4 +114,13 @@
   "type": "1",
   "pic": "shark fin soup.jpg",
   "__v": 0
+},{
+  "_id": {
+    "$oid": "6141d0f3c5c7960b25758b6c"
+  },
+  "name": "Kerapu Terbang",
+  "price": "100000",
+  "type": "2",
+  "pic": "kerapu terbang.JPG",
+  "__v": 0
 }]
