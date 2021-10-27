@@ -19,7 +19,7 @@ const EditMenu = ({
       name: '',
       price: '',
       type: '',
-      pic: ''
+      //pic: ''
   });
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const EditMenu = ({
       name: loading || !menu.name ? '' : menu.name,
       price: loading || !menu.price ? '' : menu.price,
       type: loading || !menu.type ? '' : menu.type,
-      pic: loading || !menu.pic ? '' : menu.pic,
+      //pic: loading || !menu.pic ? '' : menu.pic,
   });
   }, [menu._id]);
 
@@ -58,7 +58,7 @@ const EditMenu = ({
     formData.append('name', name);
     formData.append('price', price);
     formData.append('type', type);
-    formData.append('file', file);
+    //formData.append('file', file);
 
     try {
       const res = await axios.put('/api/menu/'+menu._id, formData, {
@@ -116,9 +116,9 @@ const EditMenu = ({
               <td>Name</td>
               <td>:</td>
               <td><input required value={name} type="text" name="name" onChange={e => onTextChange(e)} /></td>
-              <td rowSpan="4">
+              {/* <td rowSpan="4">
                   <img className="img-menu" style={{ width: '200px' }} src={`http://localhost:5000/menu/${pic}`} alt='' />
-              </td>
+              </td> */}
             </tr>
             <tr>
               <td>Price</td>
@@ -137,7 +137,7 @@ const EditMenu = ({
                 </select>
               </td>
             </tr>
-            <tr>
+            {/* <tr>
               <td>Image</td>
               <td>:</td>
               <td>
@@ -149,7 +149,7 @@ const EditMenu = ({
                   onChange={onChange}
                 />
               </td>
-            </tr>
+            </tr> */}
             <tr>
               <td></td>
               <td></td>

@@ -1,4 +1,5 @@
 {
-    "mongoURI":  "mongodb+srv://wisesa:mLztHX3ohNfPPqyH@resto.5jkzy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+
+    "mongoURI": "mongodb+srv://wisesa:77ApfFjqQtxMYvYW@resto.5jkzy.mongodb.net/test",
     "jwtSecret": "mysecrettoken"
 }

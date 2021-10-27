@@ -222,9 +222,9 @@ const Order = (
                     </div>
                     {appetizers.map((appetizer,index) => (
                       <div className="menu bg-white d-flex align-items-center">
-                        <div>
+                        {/* <div>
                           <img className="img-menu" src={`http://localhost:5000/menu/${appetizer.pic}`} />
-                        </div>
+                        </div> */}
                         <div className="price">
                           <div>
                             <h3>
@@ -260,9 +260,9 @@ const Order = (
                     </div>
                     {maincourses.map((maincourse,index) => (
                       <div className="menu bg-white d-flex align-items-center">
-                        <div>
+                        {/* <div>
                           <img className="img-menu" src={`http://localhost:5000/menu/${maincourse.pic}`} />
-                        </div>
+                        </div> */}
                         <div className="price">
                           <div>
                             <h3>
@@ -298,9 +298,9 @@ const Order = (
                     </div>
                     {desserts.map((dessert,index) => (
                         <div className="menu bg-white d-flex align-items-center">
-                        <div>
+                        {/* <div>
                           <img className="img-menu" src={`http://localhost:5000/menu/${dessert.pic}`} />
-                        </div>
+                        </div> */}
                         <div className="price">
                           <div>
                             <h3>

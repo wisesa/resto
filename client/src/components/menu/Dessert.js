@@ -10,9 +10,9 @@ const Dessert = ({
   dessert: { _id, name, price, type, pic }
 }) => (
   <div className="menu bg-white d-flex align-items-center">
-    <div>
+    {/* <div>
         <img className="img-menu" src={`http://localhost:5000/menu/${pic}`} />
-      </div>
+      </div> */}
       <div className="price">
         <div>
           <h3>

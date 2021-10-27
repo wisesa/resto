@@ -13,28 +13,28 @@ const fileUpload = require('express-fileupload');
 router.post('/', (req, res) => {
     console.log(req.body);
 
-  if (req.files === null) {
-    return res.status(400).json({ msg: 'No file uploaded' });
-  }
+//   if (req.files === null) {
+//     return res.status(400).json({ msg: 'No file uploaded' });
+//   }
 
-  const file = req.files.file;
-  file.mv(`${__dirname}../../../public/menu/${file.name}`, err => {
-    if (err) {
-      console.error(err);
-      return res.status(500).send(err);
-    }
+//   const file = req.files.file;
+//   file.mv(`${__dirname}../../../public/menu/${file.name}`, err => {
+//     if (err) {
+//       console.error(err);
+//       return res.status(500).send(err);
+//     }
     
     const newMenu = new Menu({
         name: req.body.name,
         price: req.body.price,
-        type: req.body.type,
-        pic: `${file.name}`
+        type: req.body.type
+        //pic: `${file.name}`
     });
     
     const menu = newMenu.save();
 
-    res.json({ fileName: file.name, filePath: `/public/menu/${file.name}` });
-  });
+    res.json(menu);
+  //});
 
 });
 
@@ -44,9 +44,9 @@ router.post('/', (req, res) => {
 router.put('/:id', 
     async(req, res) => {
     
-      if (req.files === null) {
-        return res.status(400).json({ msg: 'No file uploaded' });
-      }
+    //   if (req.files === null) {
+    //     return res.status(400).json({ msg: 'No file uploaded' });
+    //   }
 
         const {
             name,
@@ -54,23 +54,23 @@ router.put('/:id',
             type
         } = req.body;
 
-        const file = req.files.file;
+        // const file = req.files.file;
         
-        await file.mv(`${__dirname}../../../public/menu/${file.name}`, err => {
-            if (err) {
-            console.error(err);
-            return res.status(500).send(err);
-            }
+        // await file.mv(`${__dirname}../../../public/menu/${file.name}`, err => {
+        //     if (err) {
+        //     console.error(err);
+        //     return res.status(500).send(err);
+        //     }
             
-            res.json({ fileName: file.name, filePath: `/public/menu/${file.name}` });
-        });
+        //     res.json({ fileName: file.name, filePath: `/public/menu/${file.name}` });
+        // });
 
         //Build menu object
         const menuFields = {};
         if (name) menuFields.name = name;
         if (price) menuFields.price = price;
         if (type) menuFields.type = type;
-        if (file) menuFields.pic = `${file.name}`;
+        //if (file) menuFields.pic = `${file.name}`;
         console.log(menuFields);
             
         let menu = await Menu.findOneAndUpdate({ _id: req.params.id }, { $set: menuFields }, { new: true });

@@ -19,10 +19,10 @@ const AddMenu = () => {
 
   const onTextChange = e => setFormData({...formData,[e.target.name]:e.target.value});
 
-  const onChange = e => {
-    setFile(e.target.files[0]);
-    setFilename(e.target.files[0].name);
-  };
+  // const onChange = e => {
+  //   setFile(e.target.files[0]);
+  //   setFilename(e.target.files[0].name);
+  // };
 
   const onSubmit = async e => {
     e.preventDefault();
@@ -30,7 +30,7 @@ const AddMenu = () => {
     formData.append('name', name);
     formData.append('price', price);
     formData.append('type', type);
-    formData.append('file', file);
+    //formData.append('file', file);
 
     try {
       const res = await axios.post('/api/menu', formData, {
@@ -101,7 +101,7 @@ const AddMenu = () => {
                 </select>
               </td>
             </tr>
-            <tr>
+            {/* <tr>
               <td>Image</td>
               <td>:</td>
               <td>
@@ -113,7 +113,7 @@ const AddMenu = () => {
                   onChange={onChange}
                 />
               </td>
-            </tr>
+            </tr> */}
             <tr>
               <td></td>
               <td></td>

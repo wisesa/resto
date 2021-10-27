@@ -10,9 +10,9 @@ const MenuItem = ({
   menu: { _id, name, price, type, pic }
 }) => (
     <div class="post menu bg-white p-1 my-1">
-      <div>
+      {/* <div>
         <img class="img-menu" src={`http://localhost:5000/menu/${pic}`} />
-      </div>
+      </div> */}
       <div>
         <h3 class="my-1">
           {name}
