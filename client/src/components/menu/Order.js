@@ -222,9 +222,9 @@ const Order = (
                     </div>
                     {appetizers.map((appetizer,index) => (
                       <div className="menu bg-white d-flex align-items-center">
-                        {/* <div>
-                          <img className="img-menu" src={`http://localhost:5000/menu/${appetizer.pic}`} />
-                        </div> */}
+                        <div>
+                          <img className="img-menu" src={`http://localhost:5000/menu/appetizer.png`} />
+                        </div>
                         <div className="price">
                           <div>
                             <h3>
@@ -260,9 +260,9 @@ const Order = (
                     </div>
                     {maincourses.map((maincourse,index) => (
                       <div className="menu bg-white d-flex align-items-center">
-                        {/* <div>
-                          <img className="img-menu" src={`http://localhost:5000/menu/${maincourse.pic}`} />
-                        </div> */}
+                        <div>
+                          <img className="img-menu" src={`http://localhost:5000/menu/main-course.png`} />
+                        </div>
                         <div className="price">
                           <div>
                             <h3>
@@ -297,10 +297,10 @@ const Order = (
                         <h2 className="dish-type mr-3">Dessert</h2>
                     </div>
                     {desserts.map((dessert,index) => (
-                        <div className="menu bg-white d-flex align-items-center">
-                        {/* <div>
-                          <img className="img-menu" src={`http://localhost:5000/menu/${dessert.pic}`} />
-                        </div> */}
+                      <div className="menu bg-white d-flex align-items-center">
+                        <div>
+                          <img className="img-menu" src={`http://localhost:5000/menu/dessert.png`} />
+                        </div>
                         <div className="price">
                           <div>
                             <h3>
