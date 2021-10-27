@@ -50,7 +50,7 @@ app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
 }));
 
 //app.get('/', (req, res) => res.send('API Running'));
-app.get('/', require('./routes/front/front'));
+//app.get('/', require('./routes/front/front'));
 
 // Static folder
 app.use(express.static(path.join(__dirname, 'public')))
