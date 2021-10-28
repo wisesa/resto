@@ -17,7 +17,7 @@ const Landing=({login,isAuthenticated})=>{
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12 d-flex justify-content-center" data-aos="fade-down">
-                            <img src="http://localhost:5000/img/lobster.gif" className="img-hero img-fluid animated" alt="" />
+                            <img src="https://mighty-reef-58921.herokuapp.com/img/lobster.gif" className="img-hero img-fluid animated" alt="" />
                         </div>
                         <div className="col-lg-12 mt-3 d-flex center flex-column justify-content-center" data-aos="fade-up">
                             <h1>Archipelago's</h1>
@@ -39,7 +39,7 @@ const Landing=({login,isAuthenticated})=>{
                     <div className="row content">
                         <div className="bg-shrimp"></div>
                         <div className="col-lg-6 center-sm container" data-aos="fade-right">
-                            <img className="img-subhero" src="http://localhost:5000/img/hero_sesa_full.png" />
+                            <img className="img-subhero" src="https://mighty-reef-58921.herokuapp.com/img/hero_sesa_full.png" />
                         </div>
                         <div className="col-lg-6 left d-flex align-items-center" data-aos="fade-left">
                             <div>
@@ -66,7 +66,7 @@ const Landing=({login,isAuthenticated})=>{
 
                     <div className="row content d-flex flex-row-reverse">
                         <div className="col-lg-6 center-sm left" data-aos="fade-left">
-                            <img className="img-subhero" src="http://localhost:5000/img/hero_bapak.png" />
+                            <img className="img-subhero" src="https://mighty-reef-58921.herokuapp.com/img/hero_bapak.png" />
                         </div>
                         <div className="col-lg-6 left-sm d-flex align-items-center">
                         <div className="bg-shrimp z-index-1"></div>
@@ -108,7 +108,7 @@ const Landing=({login,isAuthenticated})=>{
                         </div>
                         <div className="col-lg-6 center-sm left" data-aos="fade-left">
                         <div className="bg-shrimp"></div>
-                            <img className="img-subhero" src="http://localhost:5000/img/hero_bapak.png" />
+                            <img className="img-subhero" src="https://mighty-reef-58921.herokuapp.com/img/hero_bapak.png" />
                         </div>
                     </div>
                 </div>
@@ -139,7 +139,7 @@ const Landing=({login,isAuthenticated})=>{
 
                         <div className="col-lg-6">
                             <div className="member d-flex align-items-start" data-aos="fade-up">
-                                <div className="pic"><img src="http://localhost:5000/img/chef-1.jpg" className="img-fluid" alt="" /></div>
+                                <div className="pic"><img src="https://mighty-reef-58921.herokuapp.com/img/chef-1.jpg" className="img-fluid" alt="" /></div>
                                 <div className="member-info">
                                     <h4>Brad Wisesa</h4>
                                     <span>Service</span>
@@ -150,7 +150,7 @@ const Landing=({login,isAuthenticated})=>{
 
                         <div className="col-lg-6 mt-4 mt-lg-0">
                             <div className="member d-flex align-items-start" data-aos="fade-up">
-                                <div className="pic"><img src="http://localhost:5000/img/chef-2.jpg" className="img-fluid" alt="" /></div>
+                                <div className="pic"><img src="https://mighty-reef-58921.herokuapp.com/img/chef-2.jpg" className="img-fluid" alt="" /></div>
                                 <div className="member-info">
                                     <h4>Brad Wisesa</h4>
                                     <span>Homecook</span>
@@ -161,7 +161,7 @@ const Landing=({login,isAuthenticated})=>{
 
                         <div className="col-lg-6 mt-4">
                             <div className="member d-flex align-items-start" data-aos="fade-up">
-                                <div className="pic"><img src="http://localhost:5000/img/chef-3.jpg" className="img-fluid" alt="" /></div>
+                                <div className="pic"><img src="https://mighty-reef-58921.herokuapp.com/img/chef-3.jpg" className="img-fluid" alt="" /></div>
                                 <div className="member-info">
                                     <h4>Brad Wisesa</h4>
                                     <span>Sous Chef</span>
@@ -172,7 +172,7 @@ const Landing=({login,isAuthenticated})=>{
 
                         <div className="col-lg-6 mt-4">
                             <div className="member d-flex align-items-start" data-aos="fade-up">
-                                <div className="pic"><img src="http://localhost:5000/img/chef-4.jpg" className="img-fluid" alt="" /></div>
+                                <div className="pic"><img src="https://mighty-reef-58921.herokuapp.com/img/chef-4.jpg" className="img-fluid" alt="" /></div>
                                 <div className="member-info">
                                     <h4>Mikhaela Wisesa</h4>
                                     <span>Executive Chef</span>

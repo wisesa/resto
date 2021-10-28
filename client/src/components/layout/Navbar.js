@@ -102,7 +102,7 @@ const Navbar=({ auth: { isAuthenticated, loading }, logout })=>{
                 <nav className="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
                     <div className="container">
                         <a className="navbar-brand js-scroll-trigger" href="/">
-                            <img src="http://localhost:5000/img/logo.png" className="logo" alt="" />
+                            <img src="https://mighty-reef-58921.herokuapp.com/img/logo.png" className="logo" alt="" />
                         </a>
                         <button className="btn-hamburger navbar-toggler navbar-toggler-right text-uppercase font-weight-bold text-white rounded" type="button" 
                           onClick={() => {

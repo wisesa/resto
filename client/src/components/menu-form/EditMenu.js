@@ -117,7 +117,7 @@ const EditMenu = ({
               <td>:</td>
               <td><input required value={name} type="text" name="name" onChange={e => onTextChange(e)} /></td>
               {/* <td rowSpan="4">
-                  <img className="img-menu" style={{ width: '200px' }} src={`http://localhost:5000/menu/${pic}`} alt='' />
+                  <img className="img-menu" style={{ width: '200px' }} src={`https://mighty-reef-58921.herokuapp.com/menu/${pic}`} alt='' />
               </td> */}
             </tr>
             <tr>

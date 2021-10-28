@@ -11,7 +11,7 @@ const MenuItem = ({
 }) => (
     <div class="post menu bg-white p-1 my-1">
       {/* <div>
-        <img class="img-menu" src={`http://localhost:5000/menu/${pic}`} />
+        <img class="img-menu" src={`https://mighty-reef-58921.herokuapp.com/menu/${pic}`} />
       </div> */}
       <div>
         <h3 class="my-1">

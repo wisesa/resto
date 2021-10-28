@@ -34,7 +34,7 @@ const Print = ({
                 <h5 className>{items._id}&nbsp;</h5>
             </div>
             <div className="col-lg-6 col-md-6 right">
-              <img src="http://localhost:5000/img/logo.png" class="logo-print" alt=""></img>
+              <img src="https://mighty-reef-58921.herokuapp.com/img/logo.png" class="logo-print" alt=""></img>
             </div>
           </div>
         {items.menu.map((item,index) => (

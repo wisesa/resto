@@ -11,7 +11,7 @@ const Dessert = ({
 }) => (
   <div className="menu bg-white d-flex align-items-center">
       <div>
-        <img className="img-menu" src={`http://localhost:5000/menu/dessert.png`} />
+        <img className="img-menu" src={`https://mighty-reef-58921.herokuapp.com/menu/dessert.png`} />
       </div>
       <div className="price">
         <div>
