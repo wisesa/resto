@@ -1119,7 +1119,7 @@ span{
         font-size: 12pt !important;
         font-weight: 600;
     }
-    .btn{
+    .btn-plus,.btn-minus{
         padding:0 5px;
     }
     .cart-mini{
@@ -1132,6 +1132,9 @@ span{
       border-radius: 4pt;
       padding:10px;
       height:55px
+    }
+    .print{
+        font-size:1rem !important;
     }
     .mr-2{
         margin-right:0 !important;

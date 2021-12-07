@@ -26,7 +26,8 @@ const Print = ({
       <Spinner />
         ) : (
       <Fragment>
-        <div className="container print bg-white">
+        <div className="container p-3">
+          <div className=" bg-white print">
           <div className="row mb-5">
             <div className="col-lg-6 col-md-6">
                 <h3 className>Transaction Note</h3>
@@ -39,13 +40,13 @@ const Print = ({
           </div>
         {items.menu.map((item,index) => (
             <div className="row">
-                <div className="col-lg-4 col-md-4">
+                <div className="col-lg-4 col-md-4 col-sm-5">
                     <b>{item.name}</b>
                 </div>
-                <div className="col-lg-4 col-md-4 right">
+                <div className="col-lg-4 col-md-4 col-sm-2 right">
                     {item.amount}
                 </div>
-                <div className="col-lg-4 col-md-4 right">
+                <div className="col-lg-4 col-md-4 col-sm-5 right">
                     {new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(item.price*item.amount)}
                 </div>
             </div>
@@ -56,15 +57,16 @@ const Print = ({
               </div>
           </div>
           <div className="row">
-              <div className="col-lg-4 col-md-4">
+              <div className="col-lg-4 col-md-4 col-sm-5">
                   <b>Grand Total</b>
               </div>
-              <div className="col-lg-4 col-md-4 right">
+              <div className="col-lg-4 col-md-4 col-sm-2 right">
                   
               </div>
-              <div className="col-lg-4 col-md-4 right">
+              <div className="col-lg-4 col-md-4 col-sm-5 right">
                   {new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(items.total)}
               </div>
+          </div>
           </div>
         </div>
 

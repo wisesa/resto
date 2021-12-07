@@ -317,12 +317,12 @@ const Order = (
                             value={(cartDessert[index] ? (cartDessert[index].amount>0 ? dessert._id+"|"+dessert.name+"|"+dessert.price+"|"+dessert.amount : '' ) : '')} />
                             <button onClick={(event) => addDessert(event,index,dessert._id,dessert.name,dessert.price)}
                                 type="button"
-                                className="btn btn-danger mr-2">
+                                className="btn btn-danger mr-2 btn-plus">
                                     {<i className="fas fa-plus"></i>}
                             </button>
                             <button onClick={(event) => decreaseDessert(event,index)}
                                 type="button"
-                                className="btn btn-danger">
+                                className="btn btn-danger btn-minus">
                                     {<i className="fas fa-minus"></i>}
                             </button>
                           </h3>
