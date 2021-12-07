@@ -37,7 +37,6 @@ const Landing=({login,isAuthenticated})=>{
                     </div>
 
                     <div className="row content">
-                        <div className="bg-shrimp"></div>
                         <div className="col-lg-6 center-sm container" data-aos="fade-right">
                             <img className="img-subhero" src="https://mighty-reef-58921.herokuapp.com/img/hero_sesa_full.png" />
                         </div>
@@ -69,7 +68,6 @@ const Landing=({login,isAuthenticated})=>{
                             <img className="img-subhero" src="https://mighty-reef-58921.herokuapp.com/img/hero_bapak.png" />
                         </div>
                         <div className="col-lg-6 left-sm d-flex align-items-center">
-                        <div className="bg-shrimp z-index-1"></div>
                             <div data-aos="fade-right">
                                 <p className="black">
                                     <strong>Archipelago's</strong> provide clean prepare from the scratch. <br/>
@@ -107,7 +105,6 @@ const Landing=({login,isAuthenticated})=>{
                             </div>
                         </div>
                         <div className="col-lg-6 center-sm left" data-aos="fade-left">
-                        <div className="bg-shrimp"></div>
                             <img className="img-subhero" src="https://mighty-reef-58921.herokuapp.com/img/hero_bapak.png" />
                         </div>
                     </div>
