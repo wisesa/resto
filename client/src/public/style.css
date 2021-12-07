@@ -56,7 +56,7 @@ a.white:active {
 }
 
 .bg-white {
-    background-color: white;
+    
 }
 
 .white {
@@ -497,7 +497,7 @@ h1 {
     grid-gap: 1rem;
     align-items: center;
     padding:10px;
-    background-color: white;
+    
     color:black !important;
   }
 
@@ -944,10 +944,7 @@ table {
 }
 
 .img-hero {
-    width: 600px;
-    background-color: white;
-    box-shadow: 8px 8px 35px;
-    border-radius: 50%;
+    width: 550px;
 }
 
 .mt-header-appetizer{
@@ -977,9 +974,8 @@ span{
         height: 130vh;
     }
     .img-hero {
-        background-color: white;
-        box-shadow: 8px 8px 35px;
-        border-radius: 50%;
+        
+        
     }
     .img-menu {
         width: 100px;
@@ -1030,9 +1026,8 @@ span{
     }
     .img-hero {
         width: 400px;
-        background-color: white;
-        box-shadow: 8px 8px 35px;
-        border-radius: 50%;
+        
+        
     }
     #hero {
         width: 100%;
@@ -1060,9 +1055,8 @@ span{
     }
     .img-hero {
         width: 400px;
-        background-color: white;
-        box-shadow: 8px 8px 35px;
-        border-radius: 50%;
+        
+        
     }
     .img-menu {
         width: 100px;
@@ -1148,15 +1142,20 @@ span{
     }
     .img-hero {
         width: 300px;
-        background-color: white;
-        box-shadow: 8px 8px 35px;
-        border-radius: 50%;
+        
+        
     }
     .span-dish{
         font-size: 0.8rem;
     }
     .flex-column-xl{
         flex-direction: column!important;
+    }
+    .img-subhero{
+        width:300px;
+    }
+    p{
+        font-size:1rem;
     }
 }
 
