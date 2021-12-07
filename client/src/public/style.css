@@ -1110,10 +1110,17 @@ span{
         width: auto;
     }
     .img-menu {
-        width: 100px;
+        width: 50px;
     }
     .menu{
-        width:360px;
+        width:300px;
+    }
+    .menu>div>div>h3{
+        font-size: 12pt !important;
+        font-weight: 600;
+    }
+    .btn{
+        padding:0 5px;
     }
     .cart-mini{
       cursor:pointer;
