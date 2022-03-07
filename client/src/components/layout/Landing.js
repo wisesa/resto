@@ -17,7 +17,7 @@ const Landing=({login,isAuthenticated})=>{
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12 d-flex justify-content-center" data-aos="fade-down">
-                            <img src="/img/red-panda.gif" className="img-hero img-fluid animated" alt="" />
+                            <img src="/img/lobster.gif" className="img-hero img-fluid animated" alt="" />
                         </div>
                         <div className="col-lg-12 mt-3 d-flex center flex-column justify-content-center" data-aos="fade-up">
                             <h1>Archipelago's</h1>

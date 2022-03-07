@@ -944,6 +944,7 @@ table {
 }
 
 .img-hero {
+    border-radius: 50%;
     width: 550px;
 }
 
@@ -974,8 +975,7 @@ span{
         height: 130vh;
     }
     .img-hero {
-        
-        
+        border-radius: 50%;
     }
     .img-menu {
         width: 100px;
@@ -1025,9 +1025,8 @@ span{
         font-size: 1.5rem;
     }
     .img-hero {
+        border-radius: 50%;
         width: 400px;
-        
-        
     }
     #hero {
         width: 100%;
@@ -1055,8 +1054,7 @@ span{
     }
     .img-hero {
         width: 400px;
-        
-        
+        border-radius: 50%;
     }
     .img-menu {
         width: 100px;
@@ -1151,6 +1149,7 @@ span{
         height: 95vh;
     }
     .img-hero {
+        border-radius: 50%;
         width: 300px;
     }
     .span-dish{
